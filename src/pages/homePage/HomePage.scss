@@ -1,0 +1,113 @@
+.app__item {
+    height: 100%;
+    padding-bottom: 15px;
+    margin-top: 20px !important;
+}
+
+.app__items {
+    width: 80%;
+}
+
+.app {
+    margin-top: 35px;
+}
+
+.app__item-header {
+    display: flex;
+
+}
+
+.author__content {
+    word-break: break-word;
+}
+
+.item__header-content {
+    width: 60%;
+}
+
+.author__main {
+    width: 100%;
+    padding: 0 20px;
+}
+
+.btn__follow {
+    width: 90px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid red;
+    color: red;
+    background-color: white;
+}
+
+.item__video {
+    margin-top: 20px;
+    width: 290px;
+    height: 516px;
+    object-fit: contain;
+    border-radius: 10px;
+    position: relative;
+}
+
+.controls i {
+    position: absolute;
+    bottom: 20px;
+    z-index: 99;
+    left: 20px;
+    color: white;
+}
+
+.volumes i {
+    position: absolute;
+    bottom: 20px;
+    z-index: 99;
+    left: 260px;
+    color: white;
+}
+
+.video__layout {
+    margin-left: 70px;
+    position: relative;
+}
+
+.range {
+    position: absolute;
+    bottom: 46px;
+    left: 246px;
+    transition: revert;
+    transform: rotate(270deg);
+    z-index: 99;
+    width: 40px;
+    color: white;
+}
+
+.range:focus {
+    outline: none;
+}
+
+.result {
+    position: absolute;
+    right: -70px;
+    bottom: 0%;
+    z-index: 99;
+}
+
+.somethings {
+    position: relative;
+    width: fit-content;
+}
+
+.result__btn {
+    background-color: var(--mainBackground);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.number{
+    font-weight: 600;
+    margin-top: 5px;
+}

@@ -1,0 +1,104 @@
+.menu__item {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.menu__item:hover {
+    background-color: var(--mainBackground);
+}
+
+.menu__item-text {
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+}
+
+.menu {
+    padding: 15px 0;
+    border-bottom: 2px var(--mainBackground) solid;
+}
+
+
+.active {
+    color: rgb(245, 82, 109);
+}
+
+.text__header {
+    color: var(--textContent);
+    font-weight: 600;
+}
+.suggested__avatar {
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+    border-radius: 50%;
+}
+
+.suggested__item {
+    display: flex;
+}
+
+.suggested__item:hover {
+    background-color: var(--mainBackground);
+}
+
+.suggested__author {
+    line-height: 15px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: rgba(22, 24, 35, 0.75);
+    width: 100%;
+}
+
+.suggested__name {
+
+    color: rgb(22, 24, 35);
+    font-family: SofiaPro, Arial, Tahoma, PingFangSC, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: -2px;
+    max-width: 260px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.btn__suggest small,
+.btn__suggest:hover small {
+    color: var(--pink);
+    font-weight: 600;
+    text-overflow: ellipsis;
+    line-height: 15px;
+    font-size: 0.9rem;
+}
+
+.discover__items {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.discover__item {
+    border-radius: 15px;
+    width: fit-content;
+    border: 2px solid var(--mainBackground);
+    padding: 1px 7px;
+    display: flex;
+    max-width: 100%;
+    align-items: center;
+    margin-bottom: 7px;
+    margin-right: 7px;
+}
+
+.discover__item-text {
+    text-overflow: ellipsis;
+    width: 100%;
+    padding-left: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    direction: ltr;
+    line-height: 16px;
+}

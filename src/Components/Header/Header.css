@@ -1,0 +1,74 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 42px;
+    color: black;
+    background-color: white;
+    overflow: hidden;
+    transform: scale(2.0);
+    padding-left: 10px;
+}
+
+.ytp-title-link {
+    display: none !important;
+}
+
+.form {
+    position: relative;
+    overflow: hidden;
+}
+
+.text {
+    padding: 15px 10px;
+    width: 360px;
+    background-color: var(--mainBackground);
+    border-radius: 20px;
+    border: none;
+    position: relative;
+    z-index: 6;
+    font-size: 16.1px;
+}
+
+.slice {
+    position: absolute;
+    right: 50px;
+    transform: scale(2.0);
+    z-index: 9;
+    top: 8px;
+    line-height: 20px;
+    color: rgb(170, 172, 175);
+    overflow: hidden;
+    width: 1.9px;
+}
+
+.btn-submit {
+    position: absolute;
+    right: 10px;
+    border: none;
+    top: 10px;
+    z-index: 9;
+    transform: scale(1.4);
+    overflow: hidden;
+    color: rgb(170, 172, 175);
+}
+
+
+.header__item-right {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 200px;
+}
+
+.bg-avatar {
+    background-image: url('../../asset/image/avatar.jpg');
+    width: 32px;
+    min-width: 32px;
+    min-height: 32px;
+    border-radius: 50%;
+    background-size: contain;
+}
