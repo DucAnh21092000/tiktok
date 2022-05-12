@@ -8,7 +8,6 @@ function HomePages() {
   const videoRef = useRef(null)
   const [sound, SetSound] = useState(1)
   const options = {
-    rootMargin: 0,
     threshold: 0.6
   };
 
