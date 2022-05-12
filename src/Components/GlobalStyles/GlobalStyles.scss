@@ -19,7 +19,22 @@
     border-radius: 50%;
 }
 
-@media all and (max-width: 400px) {
+@media only screen and (max-width: 600px) {
+    .defaultLayout__header {
+        display: none;
+    }
+
+    .defaultLayout__content-left {
+        display: none;
+    }
+
+    .defaultLayout__content-right {
+        width: 100%;
+        top: 70px;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width:1000px) {
     .defaultLayout__header {
         display: none;
     }
