@@ -159,6 +159,7 @@ function HomePages() {
                   <video ref={videoRef} autoPlay loop data-sound={1} id={index} muted={true} className={'item__video'} src={arr.src}>
                     <source src={arr.src} type={'video/mp4'} ></source>
                   </video>
+                  {/* Comment + Tym + Share */}
                   <div className='result'>
                     <div className='d-flex flex-column align-items-center justify-content-center'> <div className='result__btn'><HeartFilled style={{ fontSize: "21px" }} />      </div> <small className='number'> {arr.love} </small> </div>
                     <div className='d-flex flex-column align-items-center justify-content-center'> <div className='result__btn'><CommentOutlined style={{ fontSize: "21px" }} />  </div> <small className='number'> {arr.comments}</small></div>
@@ -168,7 +169,7 @@ function HomePages() {
 
               </div>
 
-              {/* Comment + Tym + Share */}
+
 
             </div>
           )
