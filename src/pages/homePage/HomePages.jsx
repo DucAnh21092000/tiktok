@@ -8,7 +8,7 @@ function HomePages() {
   const videoRef = useRef(null)
   const [sound, SetSound] = useState(1)
   const options = {
-    rootMargin: '20px',
+    rootMargin: 0,
     threshold: 0.6
   };
 
@@ -74,12 +74,10 @@ function HomePages() {
     let unMuted = document.querySelectorAll('.fa-volume-up')
     let muted = document.querySelectorAll('.fa-volume-mute')
     if (state == 'muted') {
-      console.log(1)
       unMuted[index].classList.add('d-none')
       muted[index].classList.remove('d-none')
     }
     else {
-      console.log(2)
       unMuted[index].classList.remove('d-none')
       muted[index].classList.add('d-none')
     }
@@ -138,7 +136,7 @@ function HomePages() {
                     </span>
                   </div>
                 </div>
-              
+
               </div>
 
               {/* 
