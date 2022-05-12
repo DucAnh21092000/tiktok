@@ -124,6 +124,7 @@ function HomePages() {
                 <div className='item__header-content'>
                   <div className='w-100' style={{ padding: '0 20px' }}>
                     <b>{arr.name}</b>
+                    <button className='btn__follow float-right'> Follow</button>
                   </div>
 
                   <div className='author__main'>
@@ -137,7 +138,7 @@ function HomePages() {
                     </span>
                   </div>
                 </div>
-                <button className='btn__follow'> Follow</button>
+              
               </div>
 
               {/* 

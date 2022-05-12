@@ -32,19 +32,23 @@
         width: 100%;
         top: 0;
     }
-}
 
-@media only screen and (min-width: 601px) and (max-width:1000px) {
-    .defaultLayout__header {
-        display: none;
-    }
-
-    .defaultLayout__content-left {
-        display: none;
-    }
-
-    .defaultLayout__content-right {
+    .item__header-content {
         width: 100%;
-        top: 70px;
+    }
+
+    .author__main {
+        width: 100%;
+    }
+
+    .rightLayout {
+        display: none;
+    }
+
+    .app {
+        margin-left: 20px;
+    }
+    .btn__follow{
+        margin-right: -20px ;
     }
 }

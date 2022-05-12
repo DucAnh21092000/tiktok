@@ -23,12 +23,18 @@
 
 }
 
-.defaultLayout__content-left::-webkit-scrollbar {
+.defaultLayout__content-left::-webkit-scrollbar,
+.defaultLayout__content-right::-webkit-scrollbar {
     width: 5px;
 }
 
+
 .defaultLayout__content-left::-webkit-scrollbar-thumb {
     background-color: var(--mainBackground);
+}
+
+.defaultLayout__content-right::-webkit-scrollbar-thumb {
+    background-color: var(--textContent);
 }
 
 .defaultLayout__content-left,
@@ -50,9 +56,6 @@
 }
 
 .defaultLayout__content-right {
-    position: fixed;
-    top: 70px;
     right: 0;
     width: 60%;
-
 }
