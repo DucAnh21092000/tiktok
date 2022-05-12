@@ -163,14 +163,10 @@ function HomePages() {
                   <div className='result'>
                     <div className='d-flex flex-column align-items-center justify-content-center'> <div className='result__btn'><HeartFilled style={{ fontSize: "21px" }} />      </div> <small className='number'> {arr.love} </small> </div>
                     <div className='d-flex flex-column align-items-center justify-content-center'> <div className='result__btn'><CommentOutlined style={{ fontSize: "21px" }} />  </div> <small className='number'> {arr.comments}</small></div>
-                    <div className='d-flex flex-column align-items-center justify-content-center'> <div className='result__btn'><ShareAltOutlined style={{ fontSize: "21px" }} /> </div>  <small className='number'> {arr.views} </small> </div>
+                    <div className='d-flex flex-column align-items-center justify-content-center'> <div className='result__btn'><ShareAltOutlined style={{ fontSize: "21px" }} /> </div>  <small className='number'> {arr.share} </small> </div>
                   </div>
                 </div>
-
               </div>
-
-
-
             </div>
           )
         })}
