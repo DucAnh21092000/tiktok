@@ -18,15 +18,3 @@
     background-size: contain;
     border-radius: 50%;
 }
-
-@media all and (max-width: 600px) {
-   .defaultLayout__header{
-       display: none;
-   }
-   .defaultLayout__content-left{
-       display: none;
-   }
-   .defaultLayout__content-right{
-       width: 100%;
-   }
-}

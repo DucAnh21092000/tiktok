@@ -20,7 +20,7 @@
 
 .defaultLayout__content-left {
     width: 20%;
-   
+
 }
 
 .defaultLayout__content-left::-webkit-scrollbar {
@@ -31,25 +31,43 @@
     background-color: var(--mainBackground);
 }
 
-.defaultLayout__content-left,.defaultLayout__content-right{
-     overflow-y: scroll;
-     scroll-behavior: smooth;
-     scroll-snap-type: y mandatory;
-     position: fixed;
-     z-index: 99;
-     overflow-x: hidden;
-     overflow-y: auto;
-     overscroll-behavior-y: contain;
-     perspective: 1px;
-     transform-style: preserve-3d;
-     padding-right: 12px;
-     perspective-origin: right top;
-     bottom: 0;
-     top: 70px;
+.defaultLayout__content-left,
+.defaultLayout__content-right {
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    position: fixed;
+    z-index: 99;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    padding-right: 12px;
+    perspective-origin: right top;
+    bottom: 0;
+    top: 70px;
 }
-.defaultLayout__content-right{
+
+.defaultLayout__content-right {
     position: fixed;
     top: 70px;
     right: 0;
     width: 60%;
+
+}
+
+@media all and (max-width: 600px) {
+    .defaultLayout__header {
+        display: none;
+    }
+
+    .defaultLayout__content-left {
+        display: none;
+    }
+
+    .defaultLayout__content-right {
+        width: 100%;
+        top: 70px;
+    }
 }

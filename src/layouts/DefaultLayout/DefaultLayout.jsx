@@ -21,9 +21,9 @@ export default function DefaultLayout(props) {
             <LayoutLeft />
           </div>
           <div className='defaultLayout__content-right'>
-{Layout}
+            {Layout}
           </div>
-        </div>     
+        </div>
       </div>
       <RightLayout />
     </React.Fragment>
