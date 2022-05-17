@@ -2,15 +2,18 @@ import { HomeOutlined, UserOutlined, VideoCameraAddOutlined } from '@ant-design/
 export const menuItems = [{
     id: 1,
     name: "For You",
-    icon: HomeOutlined
+    icon: HomeOutlined,
+    path:'/'
 }, {
     id: 2,
     name: "Following",
     icon: UserOutlined,
+    path:'/following'
 }, {
     id: 3,
     name: "LIVE",
-    icon: VideoCameraAddOutlined
+    icon: VideoCameraAddOutlined,
+    path:'/live'
 }]
 export const Discover = [{
     id: 1,

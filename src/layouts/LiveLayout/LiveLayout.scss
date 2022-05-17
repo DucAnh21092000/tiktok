@@ -1,0 +1,100 @@
+.live__header .header .header__item-right {
+    width: 300px;
+}
+
+.getcoin {
+    font-family: "Proxima Nova";
+    font-size: 18px;
+    white-space: nowrap;
+}
+
+.live__header {
+    padding: 0px 20px 10px 20px;
+    position: relative;
+    z-index: 99;
+    overflow: hidden;
+}
+
+.liveLayout__content {
+    max-width: 100%;
+}
+
+.liveLayout__content-left {
+    width: 15%;
+    padding-right: 0;
+}
+
+.liveLayout__content-right {
+    width: 83%;
+}
+
+
+.bgVideo {
+    display: flex;
+    justify-content: center;
+    width: 800px;
+}
+
+.main__video video {
+    width: 300px;
+    object-fit: cover;
+    height: 100%;
+}
+
+.bgVideo {
+    background-color: black;
+    position: relative;
+    height: 448px;
+}
+
+.liveLayout {
+    display: flex;
+    justify-content: center;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 480px;
+    align-items: center;
+}
+
+.liveContent {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+}
+
+.liveContent__info {
+    display: flex;
+    align-items: center;
+
+}
+
+.liveContent__info-name p {
+    margin-bottom: 0;
+}
+
+.liveContent__info-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.liveContent__menu {
+    position: absolute;
+    right: -65px;
+    width: 200px;
+    top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.btn__live {
+    background-color: var(--pink);
+    font-weight: 700;
+    margin-left: 25px;
+    padding: 2px 10px;
+}
+
+.recommend__video-stream  video{
+    width: 294px;
+    height: 165px;
+}

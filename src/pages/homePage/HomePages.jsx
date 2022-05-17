@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react'
-import { useState, useRef } from 'react'
+import { useState, useRef, useMemo } from 'react'
 import './HomePage.scss'
 import { CommentOutlined, HeartFilled, ShareAltOutlined } from '@ant-design/icons'
+
+
 const axios = require('axios').default
 axios.defaults.baseURL = `https://ducanh-store.herokuapp.com/api`
 function HomePages() {
-  const videoRef = useRef(null)
+
   const [sound, SetSound] = useState(1)
   const options = {
     threshold: 0.6
@@ -25,9 +27,16 @@ function HomePages() {
             else {
               togleSound('unMuted', entry.target.id)
             }
-            entry.target.play()
+            let promise = entry.target.play()
+            if (promise !== undefined) {
+              promise.then(_ => {
+                // Autoplay started!
+              }).catch(error => {
+                // Autoplay was prevented.
+                // Show a "Play" button so that user can start playback.
+              });
+            }
             togleBtnPlay(entry.target.id)
-            entry.target.muted = false
             entry.target.volume = soundValue
           }
           else {
@@ -83,7 +92,6 @@ function HomePages() {
   }
 
   const [videos, setVideos] = useState([])
-
   useEffect(() => {
     document.title = `TikTok | HomePage `
     async function getVideos() {
@@ -103,7 +111,7 @@ function HomePages() {
       <div className='app__items'>
         {videos.map((arr, index) => {
           return (
-            <div className='app__item border__bottom'>
+            <div className='app__item border__bottom' key={index}>
 
               {/* 
                   Header video start 
@@ -154,7 +162,7 @@ function HomePages() {
                   <i class="fas fa-volume-mute d-none"></i>
                 </div>
                 <div className='somethings'>
-                  <video ref={videoRef} autoPlay loop data-sound={1} id={index} muted={true} className={'item__video'} src={arr.src}>
+                  <video autoPlay loop data-sound={1} id={index} muted={true} className={'item__video'} src={arr.src}>
                     <source src={arr.src} type={'video/mp4'} ></source>
                   </video>
                   {/* Comment + Tym + Share */}

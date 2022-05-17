@@ -1,0 +1,48 @@
+.recommend-card__video {
+    width: 226px;
+    height: 302px;
+    position: relative;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.recommend {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    display: flex;
+
+    max-width: 730px;
+}
+
+.recommend-card {
+    position: relative;
+}
+
+.recommend-card:hover {
+    outline: none;
+    background-color: white;
+}
+
+.recommend-card__info {
+    position: absolute;
+    top: 50%;
+    color: white;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 700;
+}
+
+.recommend-card__info .btn__follow {
+    background-color: var(--pink);
+    color: white;
+}
+
+.recommend-card__name,
+.recommend-card__author {
+    font-size: 1.1rem;
+}

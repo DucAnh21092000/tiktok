@@ -1,7 +1,7 @@
 .menu__item {
     display: flex;
     align-items: center;
-    padding-left: 10px;
+    margin-left: 10px;
 }
 
 .menu__item:hover {
@@ -39,6 +39,7 @@
 
 .suggested__item {
     display: flex;
+    position: relative;
 }
 
 .suggested__item:hover {
@@ -102,4 +103,9 @@
     overflow: hidden;
     direction: ltr;
     line-height: 16px;
+}
+.number__people{
+    position: absolute;
+    right:10px;
+    top:8px
 }

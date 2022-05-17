@@ -12,7 +12,10 @@ function App() {
     <div>
       <Routes>
         {publicRoutes.map((route, index) => {
-          const Layout = route.layout !== null ? Fragment : DefaultLayout;
+          let Layout = DefaultLayout;
+          if(route.layout){
+            Layout = route.layout
+          }
           return (
             <Route
               key={index}

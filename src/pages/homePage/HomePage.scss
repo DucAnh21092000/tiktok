@@ -30,20 +30,12 @@
     padding: 0 20px;
 }
 
-.btn__follow {
-    width: 90px;
-    height: 30px;
-    border-radius: 5px;
-    border: 1px solid red;
-    color: red;
-    background-color: white;
-}
 
 .item__video {
     margin-top: 20px;
     width: 290px;
     height: 516px;
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 10px;
     position: relative;
 }

@@ -6,13 +6,14 @@ import Notification from '../Notification/Notification'
 export default function RightLayout() {
 
     const [notification, setNotification] = useState(false)
-    const changeState = (state) => {
+    const changeState = (state) => { 
+
         setNotification(!state)
     }
     return (
         <div className='rightLayout'>
             {notification && <Notification callback={changeState} />}
-            <button className={notification ? 'd-none' : 'mb-2 getApp '} onClick={() => setNotification(!notification)}>
+            <button type='button' className={notification ? 'd-none' : 'mb-2 getApp '} onClick={() => setNotification(!notification)}>
                 Get app
             </button>
             <div className='w-100' style={{ height: '32px' }}>

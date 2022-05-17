@@ -4,143 +4,130 @@ import { useState, useEffect } from 'react'
 import Account from '../../Components/Account/Account'
 import './LayoutLeft.scss'
 import { Hagtag, Music } from '../../Components/Hagtag'
+import MenuItem from '../../Components/MenuItem/MenuItem'
+import { useParams, Link } from 'react-router-dom'
 
 const axios = require('axios').default;
 axios.defaults.baseURL = `https://ducanh-store.herokuapp.com/api`
-const LayoutLeft = () => {
-    const [id, setId] = useState(1)
-    const [followList, setFollowList] = useState([])
-    const [suggestList, setSuggestList] = useState([])
-    const [numberFollow, setNumberFollow] = useState(0)
-    const [numberSuggest, setNumberSuggest] = useState(0)
-    const [totalSuggest, setTotalSuggest] = useState(0)
-    const [totalFollow, setTotalFollow] = useState(0)
-    const handleSetNumberSuggest = (number) => {
-        if (number <= totalSuggest) {
-            setNumberSuggest(number => number + 5)
-        }
-        else {
-            setNumberSuggest(0)
-        }
-
+const LayoutLeft = (props) => {
+    const state = props.state
+    const suggestList = props.suggestList
+    const followList = props.followList
+    const hostList = props.hostList
+    const totalFollow = props.totalFollow
+    const totalSuggest = props.totalSuggest
+    const setNumberFollow = () => {
+        props.callback({
+            type: 'setNumberFollow',
+            value: state.numberFollow < totalFollow ? (state.numberFollow + 5) : 0
+        })
+    }
+    const setNumberSuggest = () => {
+        props.callback({
+            type: 'setNumberSuggest',
+            value: state.numberSuggest < totalSuggest ? (state.numberSuggest + 5) : 0
+        })
     }
 
-    const handleSetNumberFollow = (number) => {
-        if (number <= totalFollow) {
-            setNumberFollow(number => number + 5)
-        }
-        else {
-            setNumberFollow(0)
-        }
-
+    const setNumberHost = () => {
+        props.callback({
+            type: 'setNumberHost',
+            value: state.numberHost < props.totalHost ? (state.numberHost + 5) : 0
+        })
     }
-
-    useEffect(() => {
-        async function getSuggests() {
-            await axios.get(`/suggests?_start=0&_end=${numberSuggest + 5}`)
-                .then(data => {
-                    setSuggestList(data.data.data)
-                    setTotalSuggest(data.data.pagination._total)
-                })
-        }
-        getSuggests()
-    }, [numberSuggest])
-
-    useEffect(() => {
-        async function getFollowings() {
-            await axios.get(`/followings?_start=0&_end=${numberFollow + 5}`)
-                .then(data => {
-                    setFollowList(data.data.data)
-                    setTotalFollow(data.data.pagination._total)
-                })
-        }
-        getFollowings()
-        return () => {
-
-        }
-    }, [numberFollow])
-
     return (
         <React.Fragment>
             <div className='menu'>
                 {menuItems.map((arr, index) => (
-                    <div className={id === (index + 1) ? 'menu__item active' : 'menu__item'} key={index} onClick={() => setId(index + 1)}>
-                        <span>
-                            <arr.icon style={{ fontSize: '24px', padding: '10px 15px 10px 0' }} />
-                        </span>
-                        <span className='menu__item-text'> {arr.name}</span>
+                    <div key={index}>
+                        <MenuItem icon={arr.icon} name={arr.name} index={index} path={arr.path} />
                     </div>
                 ))}
             </div>
-            <div className='suggested border__bottom'>
-                <div className='pt-2'>
-                    <p className='text__header'> Suggestes Accounts {totalSuggest}</p>
+            {
+                suggestList && <div className='suggested border__bottom'>
+                    <div className='pt-2'>
+                        <p className='text__header'> Suggestes Accounts </p>
+                    </div>
+                    <Account arr={suggestList} />
+                    <a className='btn btn__suggest' onClick={() => setNumberSuggest()}>
+                        <small> {state.numberSuggest < totalSuggest ? 'See more' : 'See less'}
+                        </small>
+                    </a>
+
+                </div>}
+
+            {
+                followList && <div className='following border__bottom'>
+                    <div className='pt-2'>
+                        <p className='text__header'> Following Accounts</p>
+                    </div>
+                    <Account arr={followList}  />
+                    <a className='btn btn__suggest' onClick={() => setNumberFollow()}>
+                        <small> {state.numberFollow < totalFollow ? 'See more' : 'See less'}
+                        </small>
+                    </a>
+
                 </div>
-                {suggestList.map((arr, index) => {
+            }
 
-                    return (
-                        <Account arr={arr} />
-                    )
-                })}
+            {
+                hostList && <div className='following border__bottom'>
+                    <div className='pt-2'>
+                        <p className='text__header'> Suggested hosts</p>
+                    </div>
+                    <Account arr={hostList} people={5} />
+                    <a className='btn btn__suggest' onClick={() => setNumberHost()}>
+                        <small> {state.numberHost < props.totalHost ? 'See more' : 'See less'}
+                        </small>
+                    </a>
 
-                <a className='btn btn__suggest' onClick={() => handleSetNumberSuggest(numberSuggest)}><small> {numberSuggest < totalSuggest ? 'See more' : 'See less'}</small></a>
-
-            </div>
-            <div className='following border__bottom'>
-                <div className='pt-2'>
-                    <p className='text__header'> Following Accounts</p>
                 </div>
-                {followList.map((arr, index) => {
-                    return (
-                        <Account arr={arr} />
-                    )
-                })}
-                <a className='btn btn__suggest' onClick={() => handleSetNumberFollow(numberFollow)}><small> {numberFollow < totalFollow ? 'See more' : 'See less'}</small></a>
-
-            </div>
-            <div className='discover border__bottom'>
-                <div className='pt-2'>
-                    <p className='text__header'> Discover</p>
+            }
+            {
+                props.discover && <div className='discover border__bottom'>
+                    <div className='pt-2'>
+                        <p className='text__header'> Discover</p>
+                    </div>
+                    <div className='discover__items mb-3'>
+                        {Discover.map((arr, index) => {
+                            let Tag = Hagtag
+                            if (arr.type === 'music') {
+                                Tag = Music
+                            }
+                            return (
+                                <div key={index} className='discover__item'>
+                                    <span><Tag /></span>
+                                    <span className='discover__item-text pr-2'>{arr.content}</span>
+                                </div>
+                            )
+                        })}
+                    </div>
                 </div>
-                <div className='discover__items mb-3'>
-                    {Discover.map((arr, index) => {
-                        let Tag = Hagtag
-
-                        if (arr.type === 'music') {
-                            Tag = Music
-                        }
-                        return (
-                            <div key={index} className='discover__item'>
-                                <span><Tag /></span>
-                                <span className='discover__item-text pr-2'>{arr.content}</span>
-                            </div>
-                        )
-                    })}
-                </div>
-            </div>
+            }
             <div className='about mb-3'>
-                <small style={{fontWeight:600,width:'80%'}} className='text__header'>
-                    <div className='d-flex flex-wrap justify-content-between' style={{width:'90%'}}>
-                        <p>About</p>
-                        <p>Newsroom</p>
-                        <p> Contact </p>
-                        <p> Careers </p>
-                        <p> ByteDance</p>
+                <small style={{ fontWeight: 600, width: '80%' }} className='text__header'>
+                    <div className='d-flex flex-wrap' style={{ width: '90%' }}>
+                        <p className='pl-2'>About</p>
+                        <p className='pl-2'>Newsroom</p>
+                        <p className='pl-2'> Contact </p>
+                        <p className='pl-2'> Careers </p>
+                        <p className='pl-2'> ByteDance</p>
                     </div>
                     <div className='d-flex flex-wrap justify-content-between'>
-                        <p>TikTok for Good</p>
-                        <p>Advertise</p>
-                        <p>Developers</p>
-                        <p>Transparency</p>
-                        <p>TikTok Rewards</p>
+                        <p className='pl-2'>TikTok for Good</p>
+                        <p className='pl-2'>Advertise</p>
+                        <p className='pl-2'>Developers</p>
+                        <p className='pl-2'>Transparency</p>
+                        <p className='pl-2'>TikTok Rewards</p>
                     </div>
                     <div className='d-flex flex-wrap justify-content-between'>
-                        <p>Safety</p>
-                        <p>Terms</p>
-                        <p>Privacy</p>
-                        <p>Help,</p>
-                        <p>Creator Portal</p>
-                        <p> Community Guidelines</p>
+                        <p className='pl-2'>Safety</p>
+                        <p className='pl-2'>Terms</p>
+                        <p className='pl-2'>Privacy</p>
+                        <p className='pl-2'>Help,</p>
+                        <p className='pl-2'>Creator Portal</p>
+                        <p className='pl-2'> Community Guidelines</p>
                     </div>
                     <div>© 2022 TikTok</div>
                 </small>

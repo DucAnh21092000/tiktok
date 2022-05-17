@@ -1,0 +1,25 @@
+.small__video {
+    width: 157px;
+    height: 97px;
+    overflow: hidden;
+}
+
+.small__video video {
+    position: absolute;
+    object-fit: cover;
+    overflow: hidden;
+    width: 120px;
+    height: 97px;
+    left: 30px;
+}
+
+.bg__video {
+    filter: blur(40px);
+    position: relative;
+}
+
+.live__content {
+    position: absolute;
+    bottom: 10px;
+    left: 40px;
+}
