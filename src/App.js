@@ -6,7 +6,7 @@ import { publicRoutes } from './routes';
 function App() {
 
   return (
-    <div>
+    <>
       <Routes>
         {publicRoutes.map((route, index) => {
           let Layout = DefaultLayout;
@@ -25,7 +25,7 @@ function App() {
           )
         })}
       </Routes>
-    </div>
+    </>
   );
 }
 

@@ -162,7 +162,7 @@ function HomePages() {
                   <i class="fas fa-volume-mute d-none"></i>
                 </div>
                 <div className='somethings'>
-                  <video autoPlay loop data-sound={1} id={index} muted={true} className={'item__video'} src={arr.src}>
+                  <video  loop data-sound={1} id={index} className={'item__video'} src={arr.src}>
                     <source src={arr.src} type={'video/mp4'} ></source>
                   </video>
                   {/* Comment + Tym + Share */}

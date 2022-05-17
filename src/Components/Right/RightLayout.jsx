@@ -10,6 +10,10 @@ export default function RightLayout() {
 
         setNotification(!state)
     }
+    const scrollTop =() => {
+        let a = document.querySelector('.defaultLayout__content-right')
+        a.scrollTo(0,0)
+    }
     return (
         <div className='rightLayout'>
             {notification && <Notification callback={changeState} />}
@@ -17,7 +21,7 @@ export default function RightLayout() {
                 Get app
             </button>
             <div className='w-100' style={{ height: '32px' }}>
-                <button className='scroll'>
+                <button className='scroll' onClick={() => scrollTop()}>
                     <ToTopOutlined style={{ fontSize: '18px' }} />
                 </button>
             </div>

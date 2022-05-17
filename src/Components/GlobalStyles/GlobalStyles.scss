@@ -10,8 +10,9 @@
     border-bottom: 2px solid var(--mainBackground);
     margin-bottom: 10px;
     margin-top: 10px;
-    
+
 }
+
 .btn__follow {
     width: 90px;
     height: 30px;
@@ -70,8 +71,18 @@
     }
 
     .rightLayout {
+        right: 10px;
+    }
+
+    .rightLayout .getApp {
         display: none;
     }
+
+    .rightLayout .scroll {
+        right: 0px;
+        z-index: 999;
+    }
+
 
     .app {
         margin-left: 20px;
@@ -102,6 +113,13 @@
         right: -50px;
     }
 }
-.video{
+
+.video {
     object-fit: cover;
+}
+
+#root {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
 }
