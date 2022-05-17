@@ -10,7 +10,7 @@ export default function Following() {
   const [videos, setVideos] = useState([]
   )
   useEffect(() => {
-    document.title = `TikTok | HomePage `
+    document.title = `TikTok | Following `
     async function getVideos() {
       await axios.get('/suggest-follows')
         .then(rs => setVideos(rs.data))

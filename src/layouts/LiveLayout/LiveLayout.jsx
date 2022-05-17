@@ -10,6 +10,8 @@ axios.defaults.baseURL = `https://ducanh-store.herokuapp.com/api`
 
 
 export default function LiveLayout(props) {
+  document.title = `TikTok | LivePage`
+  
   const [listStream, setListStream] = useState([])
   const [suggest, setSuggest] = useState([])
   const [hostLists, setHostLists] = useState([])
