@@ -1,4 +1,4 @@
-.recommend-card__video {
+.recommend-card .recommend-card__video {
     width: 226px;
     height: 302px;
     position: relative;
@@ -15,8 +15,16 @@
     max-width: 730px;
 }
 
+.recommend .menu__item {
+    width: 226px;
+    height: 302px;
+}
+
 .recommend-card {
     position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 .recommend-card:hover {

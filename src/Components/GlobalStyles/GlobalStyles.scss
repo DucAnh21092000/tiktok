@@ -29,6 +29,11 @@
     border-radius: 50%;
 }
 
+.info {
+    width: 60%;
+    margin-left: 10px;
+}
+
 .app__item {
     height: 100%;
     padding-bottom: 15px;
@@ -83,6 +88,13 @@
         z-index: 999;
     }
 
+    .app__items {
+        width: 95%;
+    }
+
+    .info {
+        width: 60%;
+    }
 
     .app {
         margin-left: 20px;

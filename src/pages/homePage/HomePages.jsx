@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useState, useRef, useMemo } from 'react'
 import './HomePage.scss'
 import { CommentOutlined, HeartFilled, ShareAltOutlined } from '@ant-design/icons'
+import { Music } from '../../Components/Hagtag'
 
 
 const axios = require('axios').default
@@ -116,20 +117,28 @@ function HomePages() {
               {/* 
                   Header video start 
             */}
-              <div className='app__item-header'>
+              <div className='app__item-header flex-column'>
 
                 {/* avatar */}
 
-                <div className='item__header-avatar'>
-                  <div className='avatar' style={{ backgroundImage: `url(${arr.img})`, height: '50px', width: '50px' }}></div>
+                <div className='d-flex'>
+                  <div className='item__header-avatar'>
+                    <div className='avatar' style={{ backgroundImage: `url(${arr.img})`, height: '50px', width: '50px' }}></div>
+                  </div>
+                  <div className='d-flex flex-column info'>
+                    <b>{arr.name}</b>
+                    <div>
+                      <small style={{ fontWeight: 600 }}>{arr.author}</small>
+                    </div>
+                    
+                  </div>
+                  <button className='btn__follow float-right'> Follow</button>
                 </div>
-
                 {/* Tên + nội dung, hagtag */}
 
                 <div className='item__header-content'>
-                  <div className='w-100' style={{ padding: '0 20px' }}>
-                    <b>{arr.name}</b>
-                    <button className='btn__follow float-right'> Follow</button>
+                  <div className='w-100' style={{ padding: '0 20px' }}>                
+                   
                   </div>
 
                   <div className='author__main'>
@@ -140,6 +149,7 @@ function HomePages() {
                           #{arr + ' '}
                         </b>
                       ))}
+                      <div><Music /><b> {arr.music}</b></div>
                     </span>
                   </div>
                 </div>
@@ -162,7 +172,7 @@ function HomePages() {
                   <i class="fas fa-volume-mute d-none"></i>
                 </div>
                 <div className='somethings'>
-                  <video  loop data-sound={1} id={index} className={'item__video'} src={arr.src}>
+                  <video loop data-sound={1} id={index} className={'item__video'} src={arr.src}>
                     <source src={arr.src} type={'video/mp4'} ></source>
                   </video>
                   {/* Comment + Tym + Share */}
