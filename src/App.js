@@ -5,28 +5,28 @@ import { publicRoutes } from './routes';
 
 function App() {
 
-  return (
-    <>
-      <Routes>
-        {publicRoutes.map((route, index) => {
-          let Layout = DefaultLayout;
-          if(route.layout){
-            Layout = route.layout
-          }
-          return (
-            <Route
-              key={index}
-              path={route.path}
-              element={
-                <Layout>
-                  <route.element />
-                </Layout>}>
-            </Route>
-          )
-        })}
-      </Routes>
-    </>
-  );
+    return (
+        <>
+            <Routes>
+                {publicRoutes.map((route, index) => {
+                    let Layout = DefaultLayout;
+                    if(route.layout){
+                        Layout = route.layout
+                    }
+                    return (
+                        <Route
+                            key={index}
+                            path={route.path}
+                            element={
+                                <Layout>
+                                    <route.element />
+                                </Layout>}>
+                        </Route>
+                    )
+                })}
+            </Routes>
+        </>
+    );
 }
 
 export default App;
