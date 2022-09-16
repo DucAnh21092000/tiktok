@@ -1,7 +1,25 @@
 import React from 'react'
+import { useState } from 'react'
 import { CommentOutlined, HeartFilled, ShareAltOutlined } from '@ant-design/icons'
+import { useDispatch } from 'react-redux'
+import { ADD_TYM } from '../../redux/const/video'
+import axios from 'axios'
 
 export default function VideoItem({ index, arr, setSound }) {
+    const [color, setColor] = useState('black')
+    const dispatch = useDispatch()
+    const handleAdd = async (arr) => {
+        await axios.put('https://ducanh-store.herokuapp.com/api/videos/' + arr.id, {
+            ...arr,
+            comments: arr.comments + 1,
+            isLove: true
+        })
+
+        if (arr.isLove) {
+            setColor('blue')
+        }
+    }
+
     const togleBtnPlay = (index) => {
         let btnPlay = document.querySelectorAll('.fa-play')
         let btnPause = document.querySelectorAll('.fa-pause')
@@ -48,7 +66,7 @@ export default function VideoItem({ index, arr, setSound }) {
                 <div className='result'>
                     <div className='d-flex flex-column align-items-center justify-content-center'>
                         <div className='result__btn'>
-                            <HeartFilled style={{ fontSize: "21px" }} />
+                            <HeartFilled style={{ fontSize: "21px", color: color }} onClick={() => handleAdd(arr)} />
                         </div>
                         <small className='number'> {arr.love} </small> </div>
                     <div className='d-flex flex-column align-items-center justify-content-center'>

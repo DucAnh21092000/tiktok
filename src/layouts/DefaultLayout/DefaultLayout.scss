@@ -3,13 +3,10 @@
     display: flex;
     justify-content: center;
     position: relative;
-    z-index: 10;
-    overflow: hidden;
 }
 
 .defaultLayout__header,
 .defaultLayout__content {
-
     width: 100%;
     max-width: 1150px;
 }
@@ -37,13 +34,17 @@
     background-color: var(--textContent);
 }
 
+.defaultLayout__content{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
 .defaultLayout__content-left,
 .defaultLayout__content-right {
+    position: fixed;
     overflow-y: scroll;
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
-    position: fixed;
-    z-index: 99;
     overflow-x: hidden;
     overflow-y: auto;
     overscroll-behavior-y: contain;
@@ -53,6 +54,7 @@
     perspective-origin: right top;
     bottom: 0;
     top: 70px;
+    z-index: 1;
 }
 
 .defaultLayout__content-right {

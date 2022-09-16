@@ -3,7 +3,10 @@ import logo from '../../asset/image/logo.png'
 import './Header.css'
 import { CloudUploadOutlined, MessageOutlined, MoreOutlined, SearchOutlined, SendOutlined } from '@ant-design/icons'
 import 'antd/dist/antd.css'
+import avatar from '../../asset/image/avatar.jpg'
+import Avatar from '../Avatar/Avatar'
 function Header(props) {
+
     return (
         <div className=' header'>
             <img src={logo} className="logo" alt='logo' ></img>
@@ -14,14 +17,10 @@ function Header(props) {
             </form>
             <div className='header__item-right'>
                 <CloudUploadOutlined style={{ fontSize: '23px' }} />
-                <SendOutlined style={{fontSize: '23px'}} />
-                <MessageOutlined style={{fontSize: '23px'}} />
+                <SendOutlined style={{ fontSize: '23px' }} />
+                <MessageOutlined style={{ fontSize: '23px' }} />
                 {props.component}
-                <div className='avatar'>
-                    <div className='bg-avatar'>
-
-                    </div>
-                </div>
+                <Avatar src={avatar} style={{ width: '35px', height: '35px', position:'relative' }} isProfile={true} />
             </div>
         </div>
     )

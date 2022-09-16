@@ -70,19 +70,24 @@ export default function DefaultLayout(props) {
       </div>
       <div className='defaultLayout'>
         <div className='defaultLayout__content'>
-          <div className='defaultLayout__content-left'>
-            <LayoutLeft
-              followList={followList}
-              suggestList={suggestList}
-              state={state}
-              totalFollow={totalFollow}
-              totalSuggest={totalSuggest}
-              callback={changeState}
-              discover={true}
-            />
+          <div className='item__left'>
+            <div className='defaultLayout__content-left'>
+              <LayoutLeft
+                followList={followList}
+                suggestList={suggestList}
+                state={state}
+                totalFollow={totalFollow}
+                totalSuggest={totalSuggest}
+                callback={changeState}
+                discover={true}
+              />
+            </div>
+
           </div>
-          <div className='defaultLayout__content-right'>
-            {Layout}
+          <div className='item__right'>
+            <div className='defaultLayout__content-right'>
+              {Layout}
+            </div>
           </div>
         </div>
       </div>

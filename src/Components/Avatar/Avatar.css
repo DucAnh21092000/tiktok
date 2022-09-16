@@ -1,0 +1,38 @@
+.block__avatar {}
+
+.menu__profile {
+    position: absolute;
+    bottom: -100px;
+    z-index: 99;
+    height: 90px;
+    width: 230px;
+    right: -20px;
+    left: 0;
+}
+
+.menu__profile-items {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fff;
+    z-index: 9;
+
+}
+
+.menu__profile-item:hover {
+    background-color: red;
+}
+
+.menu__profile-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding: 2px 0 2px 0;
+}
+
+.menu__profile-item div {
+    margin-right: 10px;
+}

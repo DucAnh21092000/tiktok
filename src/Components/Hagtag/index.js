@@ -3,8 +3,8 @@ import React from 'react'
 export function Hagtag({content}) {
     return (
         <b>
-            <span># &nbsp;</span>
-            <span>{content}</span>
+            <span>#</span>
+            <span>{content} &nbsp;</span>
         </b>
     )
 }
