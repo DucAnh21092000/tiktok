@@ -1,20 +1,20 @@
-.block__avatar {}
+.block__avatar {
+    position: relative;
+    z-index: 99;
+}
 
 .menu__profile {
     position: absolute;
     bottom: -100px;
     z-index: 99;
     height: 90px;
-    width: 230px;
+    width: 307.99px;
     right: -20px;
-    left: 0;
+    
 }
 
 .menu__profile-items {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
+    display: none;
     width: 100%;
     background-color: #fff;
     z-index: 9;
@@ -22,7 +22,7 @@
 }
 
 .menu__profile-item:hover {
-    background-color: red;
+    background-color: var(--mainBackground);
 }
 
 .menu__profile-item {
@@ -30,9 +30,18 @@
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    padding: 2px 0 2px 0;
+    padding: 5px 0 5px 0;
 }
 
 .menu__profile-item div {
     margin-right: 10px;
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: 700;
+}
+ul{
+    padding: 0;
+}
+.block__avatar:hover .menu__profile-items{
+    display: block;
 }

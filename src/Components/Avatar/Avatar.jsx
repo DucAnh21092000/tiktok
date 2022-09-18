@@ -4,6 +4,7 @@ import './Avatar.css'
 import { MoneyCollectOutlined, SettingOutlined, ShopOutlined, ShoppingOutlined, UserOutlined } from '@ant-design/icons'
 
 function Avatar({ src, style, onmouseover, isProfile }) {
+    const [show, setShow] = useState(false)
     const [hover, setHover] = useState(false)
     const handleShow = () => {
         if (isProfile) {
@@ -12,15 +13,17 @@ function Avatar({ src, style, onmouseover, isProfile }) {
     }
     const showProfile = () => {
         setHover(true)
+        setShow(true)
     }
+    console.log(show)
     return (
         <div className='block__avatar'>
             <div className='avatar'
                 style={{ backgroundImage: `url(${src})`, height: '50px', width: '50px', ...style }}
                 onMouseOver={() => handleShow()}
-                onMouseOut
+                onMouseOut={() => setHover(false)}
             >
-                {hover && <MenuProfile />}
+                <MenuProfile />
             </div>
         </div>
     )
@@ -28,7 +31,10 @@ function Avatar({ src, style, onmouseover, isProfile }) {
 
 Avatar.propTypes = {}
 
-const MenuProfile = () => {
+const MenuProfile = (props) => {
+    const setShow = (state) => {
+        props.setShow(state)
+    }
     return (
         <div className='menu__profile'>
             <div className='menu__profile-items'>
@@ -52,10 +58,36 @@ const MenuProfile = () => {
                         <div>Cài đặt</div>
                     </li>
                     <li className='menu__profile-item'>
-                        Tiếng Việt
+                        <div>
+                            <i class="fa-solid fa-globe" style={{ fontSize: '20px' }}></i>
+                        </div>
+                        <div>
+                            Tiếng Việt
+                        </div>
                     </li>
                     <li className='menu__profile-item'>
-                        Phản hồi
+                        <div>
+                            <i class="fa-solid fa-question" style={{ fontSize: '20px' }}></i>
+                        </div>
+                        <div>
+                            Phản hồi
+                        </div>
+                    </li>
+                    <li className='menu__profile-item'>
+                        <div>
+                            <i class="fa-solid fa-keyboard" style={{ fontSize: '20px' }}></i>
+                        </div>
+                        <div>
+                            Phím tắt trên bàn phím
+                        </div>
+                    </li>
+                    <li className='menu__profile-item'>
+                        <div>
+                            <i class="fa-solid fa-arrow-right-from-bracket" style={{ fontSize: '20px' }}></i>
+                        </div>
+                        <div>
+                            Đăng xuất
+                        </div>
                     </li>
                 </ul>
             </div>

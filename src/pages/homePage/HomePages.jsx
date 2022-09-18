@@ -107,7 +107,7 @@ function HomePages() {
                     </div>
 
                   </div>
-                  <button className='btn__follow float-right'> Follow</button>
+                  <button className='btn__follow btn float-right'> Follow</button>
                 </div>
                 {/* Tên + nội dung, hagtag */}
 

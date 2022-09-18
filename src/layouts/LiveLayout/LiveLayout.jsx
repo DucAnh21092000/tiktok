@@ -123,7 +123,7 @@ export default function LiveLayout(props) {
     =====================================================================================================
     */}
       <div className='live__header border__bottom'>
-        <Header component={<div className='btn__getcoin d-flex justify-content-center align-items-center '
+        <Header component={<div className='mr-2 btn__getcoin d-flex justify-content-center align-items-center '
           style={{ border: '1px solid black', width: '137.5px', height: '39px', borderRadius: ' 5px' }} >
           <span class="tiktok-o3tw52-SpanLogoContainerInner equhrky2">
             <svg width="22.5" height="22.5"

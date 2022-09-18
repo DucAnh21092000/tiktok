@@ -1,8 +1,10 @@
+import { LOGIN_GOOGLE_COMPLETE } from "../const/login"
 import { ADD_TYM_SUCCESS, GET_VIDEO_SUCCESS } from "../const/video"
 
 const initialValue = {
     login: false,
-    videos: []
+    videos: [],
+    accountGoogle: []
 }
 
 const rootReducer = (state = initialValue, action) => {
@@ -13,11 +15,21 @@ const rootReducer = (state = initialValue, action) => {
                 videos: action.videos
             }
         }
-        case ADD_TYM_SUCCESS: { 
+        case ADD_TYM_SUCCESS: {
             console.log(state)
-            return state        
+            return state
+        }
+        case LOGIN_GOOGLE_COMPLETE: {
+            console.log(state)
+            return {
+                ...state,
+                accountGoogle: action.data.data,
+                login: true,
+                showFormLogin: false
+            }
         }
         default: {
+            console.log(state)
             return state
         }
     }

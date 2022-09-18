@@ -1,0 +1,102 @@
+.login {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 99;
+    background-color: aliceblue;
+    height: min-content;
+    width: 483px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+    border-radius: 20px;
+}
+
+.login__content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login__item {
+    height: 50px;
+    border: 2px solid var(--mainBackground);
+    width: 375px;
+    display: flex;
+    align-items: center;
+}
+
+.login__item:first-child {
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.btn__close-block {
+    display: flex;
+    justify-content: end;
+    margin-right: -40px;
+    padding-top: 20px;
+}
+
+.btn__close {
+    background-color: var(--mainBackground);
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.item__login-style i {
+    color: white;
+    background-color: blue;
+    width: 20px;
+    height: 18px;
+    border-radius: 50%;
+    position: absolute;
+    left: 20px;
+
+}
+
+.item__login-style {
+    width: 100%;
+    position: relative;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 0;
+    background-color: white;
+}
+
+.login__item div,
+.facebook {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    align-items: center;
+}
+
+.login__item div span,
+.facebook div span {
+    position: absolute;
+    left: 20px;
+    font-size: 22px;
+    width: 100%;
+    z-index: 9;
+}
+
+.login__google div div div:first-child {
+    width: 0;
+}
+
+.facebook span {
+    left: 0 !important;
+}
+
+button {
+    border: none;
+}

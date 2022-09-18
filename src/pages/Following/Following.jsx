@@ -1,14 +1,15 @@
 import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import Recommend from '../../Components/Recommend/Recommend'
 const axios = require('axios').default
 
 axios.defaults.baseURL = `https://ducanh-store.herokuapp.com/api`
 
 export default function Following() {
-  const [videos, setVideos] = useState([]
-  )
+  const [videos, setVideos] = useState([])
+
   useEffect(() => {
     document.title = `TikTok | Following `
     async function getVideos() {

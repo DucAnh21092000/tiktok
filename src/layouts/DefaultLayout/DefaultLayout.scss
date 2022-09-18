@@ -4,15 +4,22 @@
     justify-content: center;
     position: relative;
 }
+.defaultLayout:first-child{
+    z-index: 99;
+
+}
+
 
 .defaultLayout__header,
 .defaultLayout__content {
     width: 100%;
     max-width: 1150px;
+
 }
 
 .defaultLayout__header {
     padding: 5px 10px;
+
 }
 
 .defaultLayout__content-left {
@@ -34,11 +41,14 @@
     background-color: var(--textContent);
 }
 
-.defaultLayout__content{
+.defaultLayout__content {
     display: flex;
     justify-content: space-between;
     position: relative;
+    z-index: 3;
+
 }
+
 .defaultLayout__content-left,
 .defaultLayout__content-right {
     position: fixed;
@@ -54,7 +64,7 @@
     perspective-origin: right top;
     bottom: 0;
     top: 70px;
-    z-index: 1;
+    z-index: 2;
 }
 
 .defaultLayout__content-right {
